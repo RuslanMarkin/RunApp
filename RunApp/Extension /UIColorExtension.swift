@@ -13,6 +13,6 @@ extension UIColor {
         purple
     }
     static var mainWhite: UIColor {
-        white
+        black
     }
 }

@@ -22,14 +22,14 @@ class ViewController: UIViewController {
         mapView = MKMapView()
         self.view.addSubview(mapView)
         
-        let button = UIButton(frame: CGRect.init(x: self.view.frame.size.width*0.10,
-                                                 y: self.view.frame.size.height*0.10,
-                                                 width: self.view.frame.size.width*0.80,
-                                                 height: self.view.frame.size.height*0.05))
-//        button.topAnchor.constraint
-        button.backgroundColor = .red
-        button.setTitle("Submit", for: .normal)
-        button.setTitle("Update", for: .selected)
+        let button = UIButton()
+        button.setTitle("Start", for: .normal)
+        button.backgroundColor = .black
+        button.frame = CGRect(x: 150, y: 600, width: 100, height: 100)
+        button.layer.cornerRadius = 50
+        button.addTarget(self, action: #selector(RunButtonTapped), for: .touchUpInside)
+        
+        
         self.view.addSubview(button)
         mapView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -41,6 +41,9 @@ class ViewController: UIViewController {
         
         mapView.showsUserLocation = true
         locationManager = CLLocationManager()
+        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         monitorGeofences()
@@ -58,12 +61,9 @@ class ViewController: UIViewController {
         }
         
     }
-    
-    @IBAction func btnSubmitClick(sender:UIButton){
-        sender.isSelected = !sender.isSelected
-        print("button state", sender.isSelected)
-
-        }
+    @objc func RunButtonTapped(){
+        
+    }
 }
 
 
