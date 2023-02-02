@@ -11,7 +11,7 @@ import CoreLocation
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     var locationManager: CLLocationManager!
     var mapView: MKMapView!
@@ -23,14 +23,16 @@ class ViewController: UIViewController {
         self.view.addSubview(mapView)
         
         let button = UIButton()
-        button.setTitle("Start", for: .normal)
+        button.setTitle("Старт", for: .normal)
         button.backgroundColor = .black
         button.frame = CGRect(x: 150, y: 600, width: 100, height: 100)
-        button.layer.cornerRadius = 50
+        button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(RunButtonTapped), for: .touchUpInside)
         
         
         self.view.addSubview(button)
+        
+        
         mapView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
         mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -38,8 +40,10 @@ class ViewController: UIViewController {
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
-        
         mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+        
+        
         locationManager = CLLocationManager()
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -47,9 +51,8 @@ class ViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         monitorGeofences()
-    
-        
     }
+    
     func monitorGeofences() {
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             let coord = CLLocationCoordinate2D(latitude: 35.58, longitude: 107.00)
@@ -62,7 +65,7 @@ class ViewController: UIViewController {
         
     }
     @objc func RunButtonTapped(){
-        
+        mapView.userTrackingMode = .follow
     }
 }
 
