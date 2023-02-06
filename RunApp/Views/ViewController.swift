@@ -9,8 +9,6 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
-
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     var locationManager: CLLocationManager!
@@ -24,12 +22,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         let button = UIButton()
         button.setTitle("Старт", for: .normal)
+        button.animateWhenPressed()
         button.backgroundColor = .black
         button.frame = CGRect(x: 150, y: 600, width: 100, height: 100)
         button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(RunButtonTapped), for: .touchUpInside)
-        
-        
+      
         
         self.view.addSubview(button)
         
@@ -67,6 +65,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     @objc func RunButtonTapped(){
         mapView.userTrackingMode = .follow
+        let runVC = runViewController()
+        let navVC = UINavigationController(rootViewController: runVC)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC,animated: true)
+
     }
 }
 
