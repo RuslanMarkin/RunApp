@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  RunApp
+
+  Created by Ruslan on 06.02.23.
+  
+*/
+
+"welcome_screen_title" = "Добро пожаловать";
+"login_button" = "Вход";
+"start_button" = "Старт";

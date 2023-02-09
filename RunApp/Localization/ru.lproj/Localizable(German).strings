@@ -1,0 +1,10 @@
+/* 
+  Localizable(German).strings
+  RunApp
+
+  Created by Ruslan on 06.02.23.
+  
+*/
+
+"welcome_screen_title" = "Willkommen";
+"login_button" = "Einloggen";
