@@ -12,24 +12,27 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     var locationManager: CLLocationManager!
-    var mapView: MKMapView!
+    var mapView: MKMapView! 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView = MKMapView()
-        self.view.addSubview(mapView)
+        view.addSubview(mapView)
         
         let button = UIButton()
         button.setTitle("Старт", for: .normal)
         button.animateWhenPressed()
         button.backgroundColor = .black
-        button.frame = CGRect(x: 150, y: 600, width: 100, height: 100)
+        button.frame = CGRect(x: 150,
+                              y: 600,
+                              width: 100,
+                              height: 100)
         button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(RunButtonTapped), for: .touchUpInside)
       
         
-        self.view.addSubview(button)
+        view.addSubview(button)
         
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,8 +57,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     func monitorGeofences() {
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            let coord = CLLocationCoordinate2D(latitude: 35.58, longitude: 107.00)
-            let region = CLCircularRegion(center: coord, radius: 100, identifier: "Geofence1")
+            let coord = CLLocationCoordinate2D(latitude: 35.58,
+                                               longitude: 107.00)
+            let region = CLCircularRegion(center: coord,
+                                          radius: 100,
+                                          identifier: "Geofence1")
             region.notifyOnEntry = true
             region.notifyOnExit = true
             

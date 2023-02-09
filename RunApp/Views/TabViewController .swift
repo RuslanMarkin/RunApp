@@ -5,7 +5,6 @@
 //  Created by Ruslan on 31.01.23.
 //
 
-import Foundation
 import UIKit
 
 class TabViewController: UITabBarController, UITabBarControllerDelegate {
@@ -40,7 +39,10 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate {
         let height = tabBar.bounds.height - posY * 2
         let roundLayer = CAShapeLayer()
         
-        let bezierPath = UIBezierPath(roundedRect: CGRect(x: posX, y: posY, width: width, height: height), cornerRadius: height / 2)
+        let bezierPath = UIBezierPath(roundedRect: CGRect(x: posX,
+                                                          y: posY,
+                                                          width: width,
+                                                          height: height), cornerRadius: height / 2)
         
         roundLayer.path = bezierPath.cgPath
         tabBar.layer.insertSublayer(roundLayer, at: 0)
