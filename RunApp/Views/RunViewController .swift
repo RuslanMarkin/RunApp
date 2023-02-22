@@ -46,10 +46,10 @@ class runViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     @objc private func dismissSelf() {
+        
         dismiss(animated: true)
         
     }
-    
     
 }
 extension TimeInterval{

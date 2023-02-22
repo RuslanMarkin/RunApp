@@ -28,6 +28,7 @@
 		8C3AAA94298990440008CA37 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3AAA93298990440008CA37 /* UIColorExtension.swift */; };
 		8C3AAA98298BF7C00008CA37 /* RunViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3AAA97298BF7C00008CA37 /* RunViewController .swift */; };
 		8C3AAA9A298BF8AA0008CA37 /* CustomAnnotation .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3AAA99298BF8AA0008CA37 /* CustomAnnotation .swift */; };
+		8CCF7E5029A4ED1D00FC4B01 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E4F29A4ED1D00FC4B01 /* LocationManager.swift */; };
 		9BA45D89D6FC8B4BE8FF0FAD /* Pods_RunAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62D2D0222B46BE67DD1586 /* Pods_RunAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		8C3AAA93298990440008CA37 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8C3AAA97298BF7C00008CA37 /* RunViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RunViewController .swift"; sourceTree = "<group>"; };
 		8C3AAA99298BF8AA0008CA37 /* CustomAnnotation .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomAnnotation .swift"; sourceTree = "<group>"; };
+		8CCF7E4F29A4ED1D00FC4B01 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		9BD3F1C31A148E5155FFC80D /* Pods-RunApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunApp.release.xcconfig"; path = "Target Support Files/Pods-RunApp/Pods-RunApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB2010154A8C9DB500F81B86 /* Pods-RunApp-RunAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunApp-RunAppUITests.release.xcconfig"; path = "Target Support Files/Pods-RunApp-RunAppUITests/Pods-RunApp-RunAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E217AF78400D8AA69BB09C5B /* Pods-RunAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunAppTests.release.xcconfig"; path = "Target Support Files/Pods-RunAppTests/Pods-RunAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				8C17C1FD2995290E00AE10F7 /* ViewModel.swift */,
+				8CCF7E4F29A4ED1D00FC4B01 /* LocationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				8C3AAA90298961910008CA37 /* ProfileView.swift in Sources */,
 				8C3AAA9A298BF8AA0008CA37 /* CustomAnnotation .swift in Sources */,
 				8C17C1FB2991A61300AE10F7 /* UIButtonAnimations.swift in Sources */,
+				8CCF7E5029A4ED1D00FC4B01 /* LocationManager.swift in Sources */,
 				8C3AAA5B29887B220008CA37 /* AppDelegate.swift in Sources */,
 				8C3AAA5D29887B220008CA37 /* SceneDelegate.swift in Sources */,
 				8C3AAA98298BF7C00008CA37 /* RunViewController .swift in Sources */,
