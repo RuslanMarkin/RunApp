@@ -5,7 +5,7 @@
 //  Created by Ruslan on 07.02.23.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 
