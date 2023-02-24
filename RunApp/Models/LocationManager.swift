@@ -8,7 +8,6 @@
 import UIKit
 import CoreLocation
 
-“
 //class LocationManager: NSObject, ObservableObject {
 //
 //
@@ -67,9 +66,9 @@ import CoreLocation
 //            let newDist = lastLocation?.distance(from:( runLocations[locationsCount - 2] ?? lastLocation)!)
 //            runDistances.append(newDist)
 //            totalDistance += newDist ?? 0.0
-//                    
+//
 //        }
 //    }
-//    
+//
 //}
 //
