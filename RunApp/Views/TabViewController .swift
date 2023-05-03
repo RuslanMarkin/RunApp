@@ -44,8 +44,12 @@ class TabViewController: UITabBarController, UITabBarControllerDelegate {
                                                           width: width,
                                                           height: height), cornerRadius: height / 2)
         
+        
         roundLayer.path = bezierPath.cgPath
         tabBar.layer.insertSublayer(roundLayer, at: 0)
+        
+        
+        
         
         tabBar.itemWidth = width / 3
         tabBar.itemPositioning = .centered

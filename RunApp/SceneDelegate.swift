@@ -54,6 +54,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
     
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        (UIApplication.shared.delegate)
+    }
+    
     
 
 
