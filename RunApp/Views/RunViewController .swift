@@ -21,6 +21,9 @@ class runViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let distanceLabel = UILabel()
     let timerLabel = UILabel()
     var runs: [Run] = []
+    var mapTrack: MKMapView!
+    var polyline: MKPolyline?
+    var coordinates = [CLLocationCoordinate2D]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +73,9 @@ class runViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        mapTrack = MKMapView(frame: view.bounds)
+        mapTrack.delegate = self
+        view.addSubview(mapView)
     }
     
     @objc func updateTimer() {
@@ -100,7 +106,27 @@ class runViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             distance += distanceInMeters / 1000.0
         }
         self.previousLocation = currentLocation
+        coordinates.append(currentLocation.coordinate)
+        updatePolyline()
     }
+    
+    func mapView(_ mapTrack: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let polyline = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: polyline)
+            renderer.strokeColor = .blue
+            renderer.lineWidth = 5
+            return renderer
+        }
+        return MKOverlayRenderer()
+    }
+
+    func updatePolyline() {
+        if coordinates.count > 1 {
+            polyline = MKPolyline(coordinates: &coordinates, count: coordinates.count)
+            mapView.addOverlay(polyline!)
+        }
+    }
+
 }
 extension TimeInterval{
     

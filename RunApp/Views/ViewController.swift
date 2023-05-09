@@ -75,6 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let navVC = UINavigationController(rootViewController: runVC)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC,animated: true)
+        
 
     }
 }
