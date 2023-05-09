@@ -20,6 +20,7 @@ class runViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let mapView = MKMapView()
     let distanceLabel = UILabel()
     let timerLabel = UILabel()
+    var runs: [Run] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,10 @@ class runViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(dismissSelf))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Finish",
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(finishRun))
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -75,6 +80,15 @@ class runViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @objc private func dismissSelf() {
         dismiss(animated: true)
+    }
+    
+    @objc private func finishRun() {
+        timer?.invalidate()
+        locationManager.stopUpdatingLocation()
+//        guard let run = self.run else { return }
+        let vc = profileViewController()
+//        vc.run = run
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
